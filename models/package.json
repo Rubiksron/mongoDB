@@ -4,8 +4,8 @@
   "description": "",
   "main": "players-schema.js",
   "scripts": {
-    "test": "jest --verbose",
-    "test-watch": "jest --watchAll --verbose"
+    "test": "jest --coverage --verbose",
+    "test-watch": "jest --coverage --watchAll --verbose"
   },
   "jest": {
     "testEnvironment": "node"

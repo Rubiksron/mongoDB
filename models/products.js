@@ -6,7 +6,7 @@ class Products {
 
   constructor() {
   }
-
+// THE TERNARY BELOW RETURNS AN OBJECT SINCE THE .find({}) method REQUIRES ONE.
   get(_id) {
     let queryObject = _id ? {_id} : {};
     return schema.find(queryObject);
