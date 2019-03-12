@@ -15,19 +15,25 @@ class Categories {
 
   get(id) {
     let response = id ? this.database.filter( (record) => record.id === id ) : this.database;
+    console.log('GET - response: ', response);
     return Promise.resolve(response);
   }
 
   post(entry) {
     entry.id = uuid();
     let record = this.sanitize(entry);
-    if ( record.id ) { this.database.push(record); }
+    if ( record.id ) {
+      this.database.push(record);
+      // console.log('POST - this.database: ', this.database)
+    }
     return this.get(record.id);
   }
 
   put(id, entry) {
     let record = this.sanitize(entry);
-    if( record.id ) { this.database = this.database.map((item) => (item.id === id) ? record : item  ); }
+    if( record.id ) {
+      this.database = this.database.map((item) => (item.id === id) ? record : item  );
+    }
     return this.get(id);
   }
 

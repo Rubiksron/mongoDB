@@ -6,10 +6,10 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 // Esoteric Resources
-const errorHandler = require( './middleware/error.js');
-const notFound = require( './middleware/404.js' );
-const categoriesRouter = require( './api/categories.js' );
-const productsRouter = require( './api/products.js' );
+const errorHandler = require('./middleware/error.js');
+const notFound = require('./middleware/404.js');
+const categoriesRouter = require('./api/categories.js');
+const productsRouter = require('./api/products.js');
 
 // Prepare the express app
 const app = express();
@@ -37,7 +37,7 @@ module.exports = {
     if( ! isRunning ) {
       app.listen(port, () => {
         isRunning = true;
-        console.log(`Server Up on ${port}`);
+        console.log(`Server is up on port: ${port}`);
       });
     }
     else {
